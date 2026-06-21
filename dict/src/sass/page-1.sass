@@ -707,41 +707,40 @@ body
 
   .about
     margin-top: 143px
-    position: relative
-    min-height: 644px
-    display: block
+    display: flex
+    flex-direction: column
+    gap: 24px
 
     &__info
-      position: absolute
-      top: 6px
-      left: 47px
-      width: calc(100% - 47px)
-      max-width: 472px
+      position: static
+      width: 100%
+      max-width: none
       gap: 22px
+      padding: 0 20px
 
     &__title
-      margin-left: 2px
+      margin-left: 0
 
     &__subtitle
       margin-top: 0
-      margin-left: 2px
+      margin-left: 0
 
     &__text
-      margin-right: 47px
+      margin-right: 0
       margin-top: 26px
       --min-font-size: 18
       --max-font-size: 20
       font-size: var(--interpolate)
 
     &__image-block
-      position: absolute
-      top: 175px
-      left: 461px
-      width: 270px
-      height: 385px
-      padding: 0
-      margin: 0
-      background: none
+      position: static
+      width: 100%
+      max-width: 500px
+      height: auto
+      padding: 20px
+      margin: 0 auto
+      background-color: #f7eee8
+      border-radius: 30px
 
   .help
     margin-top: 75px
