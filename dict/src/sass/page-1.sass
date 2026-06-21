@@ -14,17 +14,14 @@ $bg-nav: rgba(217, 217, 217, 0.6)
 $bg-footer: #d9d9d9
 
 * 
-  /* Обязательно укажите базовые размеры шрифта (без px) */
   --min-font-size: 16
   --max-font-size: 24
 
   --min-screen-size: 430
   --max-screen-size: 1440
 
-  /* Исправлено: добавлены пробелы вокруг минуса */
   --interpolate-diff: calc(var(--max-font-size) - var(--min-font-size))
 
-  /* Исправлено: добавлены пробелы вокруг знаков -, * и / */
   --interpolate: clamp(
     var(--min-font-size) * 1px,
     calc(
