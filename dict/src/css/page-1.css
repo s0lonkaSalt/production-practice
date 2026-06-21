@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, div, span, h1, h2, h3, p, a, img, button, header, nav, main, section, footer {
   margin: 0;
   padding: 0;
@@ -6,9 +7,24 @@ html, body, div, span, h1, h2, h3, p, a, img, button, header, nav, main, section
 }
 
 * {
+  /* Обязательно укажите базовые размеры шрифта (без px) */
+  --min-font-size: 16;
+  --max-font-size: 24;
   --min-screen-size: 430;
+  --max-screen-size: 1440;
+  /* Исправлено: добавлены пробелы вокруг минуса */
   --interpolate-diff: calc(var(--max-font-size) - var(--min-font-size));
-  --interpolate: clamp(calc(var(--min-font-size) * 1px), calc((var(--min-font-size) * 1px) + var(--interpolate-diff) * ((100vw - calc(var(--min-screen-size) * 1px)) / (var(--max-screen-size) - var(--min-screen-size)))), calc(var(--max-font-size) * 1px));
+  /* Исправлено: добавлены пробелы вокруг знаков -, * и / */
+  --interpolate: clamp(
+    var(--min-font-size) * 1px,
+    calc(
+      (var(--min-font-size) * 1px) +
+      var(--interpolate-diff) *
+      ((100vw - var(--min-screen-size) * 1px) /
+      (var(--max-screen-size) - var(--min-screen-size)))
+    ),
+    var(--max-font-size) * 1px
+  );
 }
 
 html {
