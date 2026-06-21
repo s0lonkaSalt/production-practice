@@ -1,0 +1,1058 @@
+// Reset
+html, body, div, span, h1, h2, h3, p, a, img, button, header, nav, main, section, footer
+  margin: 0
+  padding: 0
+  border: 0
+  box-sizing: border-box
+
+// Переменные
+$orange: #f97304
+$text-dark: #4e4e4e
+$text-light: #666666
+$text-blue: #466475
+$bg-nav: rgba(217, 217, 217, 0.6)
+$bg-footer: #d9d9d9
+
+*
+  --min-screen-size: 430
+  --interpolate-diff: calc(var(--max-font-size) - var(--min-font-size))
+  --interpolate: clamp(calc(var(--min-font-size) * 1px), calc((var(--min-font-size) * 1px) + var(--interpolate-diff) * ((100vw - calc(var(--min-screen-size) * 1px)) / (var(--max-screen-size) - var(--min-screen-size)))), calc(var(--max-font-size) * 1px))
+
+html
+  height: 100%
+  font-size: 16px
+
+body
+  min-height: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  font-family: 'Open Sans', sans-serif
+  line-height: normal
+  letter-spacing: 0px
+  background-color: #fff
+  overflow-x: hidden
+  padding-top: 50px
+  gap: 46px
+  --max-screen-size: 1440
+
+.btn-orange
+  display: flex
+  align-items: flex-start
+  background-color: $orange
+  padding: 9px 9px 9px 14px
+  border-radius: 25px
+  color: #fff
+  cursor: pointer
+
+.hover-dark:hover
+  filter: brightness(0.85)
+
+.hover-bright:hover
+  filter: brightness(1.2)
+
+.header
+  display: flex
+  align-items: flex-start
+  justify-content: space-between
+  color: $orange
+  width: 100%
+  max-width: 1120px
+  margin: 0 auto
+
+  &__brand
+    display: flex
+    align-items: flex-start
+    gap: 20px
+
+  &__logo
+    width: 188px
+    flex-shrink: 0
+
+  &__menu-btn
+    display: none
+
+  &__contacts
+    margin-left: 67px
+    width: 239px
+    display: flex
+    flex-direction: column
+    gap: 17px
+    flex-shrink: 0
+
+  &__time
+    margin-right: 2px
+    display: flex
+    align-items: flex-start
+    justify-content: center
+    gap: 7px
+    font-size: 18px
+    font-weight: 700
+
+  &__time-icon
+    width: 36px
+    flex-shrink: 0
+
+  &__time-text
+    margin-top: 5px
+    text-align: center
+
+  &__phone-block
+    display: flex
+    align-items: flex-start
+    gap: 7px
+
+  &__phone-icon
+    width: 36px
+    flex-shrink: 0
+
+  &__phone-info
+    display: flex
+    flex-direction: column
+    flex-grow: 1
+
+  &__phone-number
+    font-size: 24px
+    font-weight: 700
+    text-align: center
+    color: inherit
+    text-decoration: none
+
+  &__phone-label
+    margin-top: -2px
+    text-align: left
+    font-size: 16px
+    font-weight: 400
+
+  &__socials
+    margin-top: 33px
+    display: flex
+    align-items: flex-start
+    gap: 14px
+
+  &__social-item
+    position: relative
+    width: 40px
+    height: 40px
+    flex-shrink: 0
+    border-radius: 50%
+    cursor: pointer
+
+    &--wa
+      background-color: #48c95f
+    &--tg
+      background-color: #27a6e5
+    &--vk
+      background-color: #07f
+    &--yt
+      background-color: #f40000
+    &--ig
+      background: radial-gradient(231% 231% at 102% 2%, #f9ed32 0%, #ee2a7b 36%, #d22a8a 44%, #8b2ab2 60%, #1b2af0 83%, #002aff 88%) top left / auto auto no-repeat
+
+  &__social-img
+    position: absolute
+    left: 50%
+    translate: -50% 0
+
+    .header__social-item--wa &
+      top: 9px
+      width: 21px
+
+    .header__social-item--tg &
+      top: 12px
+      margin-left: -1px
+      width: 19px
+
+    .header__social-item--vk &
+      top: 13px
+      width: 22px
+
+    .header__social-item--yt &
+      top: 13px
+      width: 22px
+
+    .header__social-item--ig &
+      top: 10px
+      width: 20px
+
+.navigation
+  display: flex
+  align-items: flex-start
+  gap: 47px
+  color: $text-dark
+  font-size: 16px
+  font-weight: 700
+  background-color: $bg-nav
+  padding: 8px 5px
+  border-radius: 15px
+  width: 100%
+  max-width: 900px
+  margin: 0 auto
+
+  &__btn
+    text-decoration: none
+    width: 187.5px
+    min-height: 54px
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-shrink: 0
+    font-style: normal
+    letter-spacing: 0px
+    text-align: center
+    background-color: #fff
+    padding: 16px 8px
+    border-radius: 20px
+    cursor: pointer
+    color: inherit
+    font-size: 16px
+    font-weight: 700
+
+    &--active
+      color: #fff
+      background-color: $orange
+
+    &--multiline
+      padding: 5px 8px
+
+.main-content
+  display: flex
+  flex-direction: column
+  width: 100%
+  max-width: 1120px
+  margin: 0 auto
+  gap: 73px
+
+.hero
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  gap: 26px
+  color: #fff
+  font-weight: 700
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 46%, rgba(255, 255, 255, 0) 100%) top left / auto auto no-repeat, url(../img/card-symbol2.png) center / cover no-repeat
+  padding: 98px 37px 125px 37px
+  border-radius: 10px
+  width: 100%
+
+  &__content
+    width: 100%
+    max-width: 588px
+    display: flex
+    flex-direction: column;
+    gap: 26px
+
+  &__title
+    --min-font-size: 24
+    --max-font-size: 41
+    font-size: var(--interpolate)
+    line-height: normal
+
+  &__subtitle
+    --min-font-size: 17
+    --max-font-size: 21
+    font-size: var(--interpolate)
+    line-height: normal
+
+  &__button
+    width: 180px
+    display: flex
+    align-items: center
+    justify-content: center
+    font-size: 18px
+    font-style: normal
+    letter-spacing: 0px
+    text-align: center
+    background: linear-gradient(180deg, #fdc29f 0%, #e4976a 100%) top left / auto auto no-repeat
+    padding: 17px 9px 18px 9px
+    border-radius: 20px
+    color: #fff
+    font-weight: 700
+    cursor: pointer
+
+.categories
+  display: flex
+  flex-direction: column
+  gap: 32px
+  font-weight: 700
+  width: 100%
+
+  &__title
+    color: #006e9b
+    --min-font-size: 21
+    --max-font-size: 35
+    font-size: var(--interpolate)
+    line-height: normal
+
+    &--tablet
+      display: none
+    &--mobile
+      display: none
+
+  &__grid
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    gap: 23px
+    color: $text-dark
+    font-size: 22px
+    width: 100%
+
+  &__card
+    box-shadow: 0px 6px 40px 0px rgba(0, 0, 0, 0.25)
+    width: 100%
+    min-height: 270px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    text-align: center
+    background-color: #fff
+    padding: 26px 8px
+    border: 1px solid $orange
+    border-radius: 20px
+    gap: 28px
+
+    &--loaders
+      gap: 13px
+
+    &--mini
+      .categories__card-image
+        margin-top: -4px
+    &--loaders
+      .categories__card-image
+        margin-left: 1px
+        margin-top: 3px
+    &--excavators
+      .categories__card-image
+        margin-top: -4px
+    &--tractors
+      .categories__card-image
+        margin-top: -5px
+
+  &__card-image
+    width: 149px
+    flex-shrink: 0
+
+  &__card-title
+    font-size: 22px
+    font-weight: 700
+    line-height: normal
+
+.about
+  display: flex
+  align-items: flex-start
+  gap: 10px
+  color: #006e9b
+  font-weight: 700
+  width: 100%
+
+  &__info
+    width: 640px
+    display: flex
+    flex-direction: column
+    gap: 9px
+    flex-shrink: 0
+
+  &__title
+    font-size: 30px
+    line-height: normal
+
+  &__subtitle
+    margin-top: 24px
+    font-size: 30px
+    line-height: normal
+
+  &__text
+    color: $text-blue
+    font-size: 20px
+    font-weight: 300
+    text-align: left
+    margin-top: 9px
+    line-height: normal
+
+  &__image-block
+    margin-top: 32px
+    width: 550px
+    height: 393px
+    flex-shrink: 0
+    background-color: #f7eee8
+    border-radius: 30px
+    padding: 24px 20px 24px 21px
+
+  &__image
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+.help
+  display: flex
+  flex-direction: column
+  gap: 43px
+  width: 100%
+
+  &__title
+    color: #006e9b
+    --min-font-size: 19
+    --max-font-size: 30
+    font-size: var(--interpolate)
+    font-weight: 700
+    line-height: normal
+
+  &__grid
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 92px 170px
+    color: $text-light
+    font-size: 20px
+    font-weight: 400
+    padding-left: 35px
+
+  &__card
+    display: flex
+    align-items: flex-start
+    gap: 34px
+
+  &__card-icon
+    width: 65px
+    flex-shrink: 0
+
+  &__card-text
+    flex-grow: 1
+    text-align: left
+    line-height: normal
+    margin-top: 6px
+
+
+.footer
+  display: flex
+  align-items: flex-start
+  gap: 101px
+  background-color: $bg-footer
+  padding: 52px 122px 80px 122px
+  width: 100vw
+  justify-content: center
+
+  &__copyright
+    margin-top: 1px
+    text-align: left
+    width: 280px
+
+  &__copyright-text
+    color: #000
+    font-size: 18px
+    font-weight: 400
+    line-height: normal
+
+  &__brand
+    margin-top: 1px
+    width: 314px
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 40px
+    font-weight: 700
+
+  &__logo
+    margin-left: -14px
+    width: 188px
+    flex-shrink: 0
+
+  &__phone-block
+    display: flex
+    flex-direction: column
+    gap: 9px
+    width: 100%
+
+  &__phone-number
+    width: 234px
+    align-self: center
+    color: $orange
+    font-size: 27px
+    text-align: left
+
+  &__phone-label
+    color: $text-blue
+    text-align: center
+    font-size: 20px
+    font-weight: 700
+
+  &__socials
+    display: flex
+    align-items: flex-start
+    gap: 14px
+
+  &__social-item
+    position: relative
+    width: 40px
+    height: 40px
+    flex-shrink: 0
+    border-radius: 50%
+    cursor: pointer
+
+    &--wa
+      background-color: #48c95f
+    &--tg
+      background-color: #27a6e5
+    &--vk
+      background-color: #07f
+    &--yt
+      background-color: #f40000
+    &--ig
+      background: radial-gradient(231% 231% at 102% 2%, #f9ed32 0%, #ee2a7b 36%, #d22a8a 44%, #8b2ab2 60%, #1b2af0 83%, #002aff 88%) top left / auto auto no-repeat
+
+  &__social-img
+    position: absolute
+    left: 50%
+    translate: -50% 0
+
+    .footer__social-item--wa &
+      top: 9px
+      width: 21px
+
+    .footer__social-item--tg &
+      top: 12px
+      margin-left: -1px
+      width: 19px
+
+    .footer__social-item--vk &
+      top: 13px
+      width: 22px
+
+    .footer__social-item--yt &
+      top: 13px
+      width: 22px
+
+    .footer__social-item--ig &
+      top: 10px
+      width: 20px
+
+  &__contacts
+    width: 219px
+    display: flex
+    flex-direction: column
+    gap: 44px
+    flex-shrink: 0
+
+  &__contact-section
+    display: flex
+    flex-direction: column
+    gap: 10px
+    text-align: left
+
+  &__contact-title
+    color: $text-blue
+    font-size: 20px
+    font-weight: 700
+
+  &__contact-row
+    display: flex
+    align-items: flex-start
+    gap: 10px
+    color: #4e4e4e
+    font-size: 18px
+    font-weight: 400
+
+    .footer__contact-section--email &
+      color: $orange
+
+  &__contact-icon
+    margin-top: 3px
+    width: 20px
+    flex-shrink: 0
+
+  &__contact-text
+    line-height: normal
+
+
+
+
+
+
+
+
+@media (max-width: 768px)
+  body
+    --max-screen-size: 768
+    align-items: stretch
+    gap: 30px
+    padding-top: 0
+
+  .header
+    flex-direction: column
+    align-items: center
+    gap: 3px
+    padding: 12px 19px
+    margin: 0
+    max-width: none
+
+    &__brand
+      margin-left: 19px
+      display: flex
+      align-items: flex-start
+      gap: 20px
+      justify-content: space-between
+      width: 100%
+      max-width: 710px
+      align-self: start
+
+    &__logo
+      margin: -2px 0 -3px -4px
+
+    &__menu-btn
+      display: flex
+      margin-top: 29px
+
+      &-text
+        margin-left: 3px
+        margin-top: 3px
+        text-align: center
+        font-size: 15px
+
+      &-icon
+        width: 27px
+        flex-shrink: 0
+
+    &__contacts
+      margin-left: -1px
+      width: 239px
+      gap: 17px
+      color: $orange
+
+    &__socials
+      margin-top: 12px
+      gap: 14px
+
+  .navigation
+    display: none
+
+  .main-content
+    gap: 0
+    max-width: none
+    padding: 0
+
+  .hero
+    width: calc(100% - 92px)
+    max-width: 1120px
+    gap: 39px
+    align-self: center
+    padding: 66px 20px 49px 20px
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 46%, rgba(255, 255, 255, 0) 100%) top left / auto auto no-repeat, url(../img/card-symbol1.png) center / cover no-repeat
+
+    &__content
+      max-width: 352px
+      gap: 28px
+
+    &__title
+      --min-font-size: 34
+      --max-font-size: 40
+
+    &__subtitle
+      --min-font-size: 19
+      --max-font-size: 21
+
+    &__button
+      width: 153px
+      padding-top: 16px
+      padding-bottom: 16px
+
+  .categories
+    margin: 73px auto 0 auto
+    width: 90%
+    max-width: 540px
+    align-self: center
+    text-align: center
+
+    &__title
+      &--desktop
+        display: none
+      &--tablet
+        display: block
+        font-weight: 600
+        --min-font-size: 24
+        --max-font-size: 30
+
+    &__grid
+      grid-template-columns: repeat(2, 1fr)
+      gap: 11px
+
+    &__card
+      width: 210px
+      padding: 26px 8px
+      gap: 12px
+
+      &--loaders
+        padding-bottom: 20px
+
+    &__card-image
+      width: 150px
+
+  .about
+    margin-top: 143px
+    position: relative
+    min-height: 644px
+    display: block
+
+    &__info
+      position: absolute
+      top: 6px
+      left: 47px
+      width: calc(100% - 47px)
+      max-width: 472px
+      gap: 22px
+
+    &__title
+      margin-left: 2px
+
+    &__subtitle
+      margin-top: 0
+      margin-left: 2px
+
+    &__text
+      margin-right: 47px
+      margin-top: 26px
+      --min-font-size: 18
+      --max-font-size: 20
+      font-size: var(--interpolate)
+
+    &__image-block
+      position: absolute
+      top: 175px
+      left: 461px
+      width: 270px
+      height: 385px
+      padding: 0
+      margin: 0
+      background: none
+
+  .help
+    margin-top: 75px
+    padding-bottom: 45px
+    gap: 24px
+
+    &__title
+      margin: 0 43px
+      --min-font-size: 23
+      --max-font-size: 28
+
+    &__grid
+      gap: 94px
+      padding: 6px 53px 1px 29px
+
+      .help__card--models
+        order: 3
+        width: 100%
+        display: flex
+        gap: 34px
+        justify-content: flex-start
+        align-items: flex-start
+        margin-left: 0
+
+      .help__card--params
+        order: 4
+        width: 100%
+        display: flex
+        gap: 33px
+        justify-content: flex-start
+        align-items: flex-start
+        margin-left: 0
+
+      .help__card--subsidy
+        order: 1
+        width: 261px
+        margin-left: -7px
+
+      .help__card--lease
+        order: 2
+        width: 356px
+        margin-right: -2px
+
+  .footer
+    flex-direction: column
+    align-items: center
+    gap: 30px
+    padding: 10px 19px 36px 19px
+    width: 100%
+
+    &__copyright
+      order: 3
+      margin-top: 34px
+      margin-right: -6px
+      text-align: left
+      width: auto
+      flex-grow: 1
+
+    &__brand
+      order: 1
+      margin-left: 8px
+      width: 100%
+      max-width: 314px
+      gap: 40px
+
+      .footer__logo
+        margin-left: 0
+
+      .footer__phone-block
+        .footer__phone-number
+          --min-font-size: 22
+          --max-font-size: 27
+          font-size: var(--interpolate)
+        .footer__phone-label
+          --min-font-size: 18
+          --max-font-size: 20
+          font-size: var(--interpolate)
+
+    &__contacts
+      order: 2
+      margin-top: -6px
+      margin-bottom: -2px
+      flex-direction: row
+      gap: 108px
+      width: auto
+      max-width: 600px
+      justify-content: center
+
+
+
+
+
+
+
+
+
+@media (max-width: 320px)
+  body
+    gap: 50px
+
+  .header
+    gap: 35px
+    padding: 14px 4px 21px 8px
+
+    &__brand
+      margin-left: 0
+      gap: 24px
+      max-width: 510px
+
+    &__logo
+      margin: -2px 0 -3px -4px
+
+    &__menu-btn
+      margin-top: 29px
+
+    &__contacts
+      margin-left: -9px
+
+    &__socials
+      margin-left: -8px
+      margin-top: 2px
+
+  .main-content
+    gap: 0
+
+  .hero
+    width: calc(100% - 13px)
+    max-width: 510px
+    padding: 56px 16px
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 46%, rgba(255, 255, 255, 0) 100%) top left / auto auto no-repeat, url(../img/symbol.png) center / cover no-repeat
+    gap: 30px
+    align-self: center
+
+    &__content
+      margin-right: 54px
+      gap: 23px
+
+    &__title
+      font-size: 29px
+
+    &__subtitle
+      font-size: 21px
+
+    &__button
+      width: 140px
+      padding-top: 14px
+      padding-bottom: 14px
+
+  .categories
+    margin-top: 49px
+    width: 211px
+    gap: 20px
+
+    &__title
+      &--desktop
+        display: none
+      &--tablet
+        display: none
+      &--mobile
+        display: block
+        font-weight: 600
+        font-size: 22px
+        width: 175px
+        align-self: center
+        text-align: left
+
+    &__grid
+      grid-template-columns: 1fr
+      gap: 40px
+
+    &__card
+      margin-right: 1px
+      padding: 26px 8px 50px 8px
+
+      &--loaders
+        padding-bottom: 20px
+      &--excavators
+        margin-left: 1px
+        margin-right: 0
+
+    &__card-image
+      width: 150px
+
+  .about
+    margin-top: 8px
+    width: calc(100% - 30px)
+    max-width: 480px
+    display: flex
+    flex-direction: column
+    gap: 36px
+
+    &__info
+      position: static
+      width: 100%
+      max-width: none
+      display: flex
+      flex-direction: column
+      gap: 13px
+
+    &__title
+      font-size: 22px
+      text-align: center
+      margin-left: 0
+
+    &__subtitle
+      margin-top: 36px
+      margin-left: 0
+
+    &__text
+      font-size: 16px
+      margin-right: 0
+      margin-top: 0
+
+    &__image-block
+      position: static
+      margin-left: 12px
+      margin-right: 8px
+      width: auto
+      height: auto
+      padding: 0
+      background: none
+
+  .help
+    margin-left: 4px
+    margin-top: 22px
+    width: calc(100% - 32px)
+    max-width: 480px
+    gap: 24px
+
+    &__title
+      margin: 0 4px
+
+    &__grid
+      grid-template-columns: 1fr
+      gap: 41px
+      padding: 0 1px 1px 1px
+
+      .help__card--models
+        order: 3
+        width: 97%
+        margin-left: -1px
+        gap: 34px
+
+      .help__card--params
+        order: 4
+        width: 103%
+        margin-right: -1px
+        margin-bottom: -5px
+        gap: 33px
+
+      .help__card--subsidy
+        order: 1
+        width: 105%
+        margin-left: -1px
+        gap: 34px
+
+      .help__card--lease
+        order: 2
+        width: 95%
+        margin-right: -1px
+        margin-bottom: -1px
+        gap: 33px
+
+        .help__card-icon
+          margin-left: -2px
+
+  .footer
+    gap: 44px
+    padding: 10px 9px
+    width: 100%
+
+    &__copyright
+      order: 3
+      margin-top: 0
+      margin-right: 0
+      width: 100%
+
+      &-text
+        color: #000
+        text-align: left
+
+    &__brand
+      order: 1
+      width: 252px
+      gap: 23px
+
+      .footer__logo
+        margin-left: -1px
+        width: 165px
+
+      .footer__phone-block
+        .footer__phone-number
+          margin: 0 17px
+          font-size: 25px
+        .footer__phone-label
+          margin: 0
+
+      .footer__socials
+        margin-left: 16px
+        margin-right: 17px
+        gap: 12px
+
+        .footer__social-item
+          width: 34px
+          height: 34px
+
+          .footer__social-img
+            &.circle-socials-img7
+              top: 8px
+              width: 18px
+            &.circle-socials-img8
+              top: 10px
+              margin-left: -1px
+              width: 16px
+            &.circle-socials-img9
+              top: 11px
+              width: 19px
+            &.circle-socials-instagram3
+              top: 9px
+              width: 17px
+
+    &__contacts
+      order: 2
+      flex-direction: column
+      gap: 35px
+      margin-left: -1px
+      margin-top: 0
+      margin-bottom: 0
+      width: 100%
+      max-width: none
+
+      .footer__contact-section--email
+        margin-left: 0
